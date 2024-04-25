@@ -1,0 +1,8 @@
+pandas
+numpy
+matplotlib
+botorch
+gpytorch
+scikit-learn
+pySOT
+torch

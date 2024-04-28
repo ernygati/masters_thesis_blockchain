@@ -145,6 +145,8 @@ class BayesianOptimizer():
     def optimize_DYCORS(self, X: np.array, y: np.array):
         """ """
         input_dimensionality = X.shape[1]
+        X = np.array(X)
+        y= np.array(y)
         optim = DYCORSOptimProblem(X, y,input_dimensionality, self.bounds, self.standard_bounds)
         surrogate = gp.GPRegressor(input_dimensionality,  np.array(self.standard_bounds[0]), np.array(self.standard_bounds[1]))
         
@@ -158,7 +160,7 @@ class BayesianOptimizer():
         controller = SerialController(objective=optim.eval)
         controller.strategy = strategy
         controller.run()
-        candidate =  np.array(unnormalize(torch.tensor(optim.best_x), bounds))
+        candidate =  np.array(unnormalize(torch.tensor(optim.best_x), self.bounds))
     
 
         return candidate[0].astype(int)

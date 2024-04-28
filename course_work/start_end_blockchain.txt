@@ -1,0 +1,55 @@
+Last login: Tue Feb  8 12:04:27 on ttys001
+ernestgatiatullin@MacBook-Pro ~ % ssh @ubuntu.3.134.45.168
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command]
+ernestgatiatullin@MacBook-Pro ~ % ssh ubunt@3.134.45.168 
+ubunt@3.134.45.168: Permission denied (publickey).
+ernestgatiatullin@MacBook-Pro ~ % ssh ubuntu@3.134.45.168 
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Feb 11 07:04:18 UTC 2022
+
+  System load:  0.0               Processes:                127
+  Usage of /:   9.4% of 96.88GB   Users logged in:          1
+  Memory usage: 7%                IPv4 address for docker0: 172.17.0.1
+  Swap usage:   0%                IPv4 address for eth0:    10.0.68.202
+
+
+21 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+ubuntu@ip-10-0-68-202:~/factory$ python3 start_chain.py -v 3 -e "solana-nr3" -c config.toml
+{'validator_count': 3, 'env_name': 'solana-nr3', 'config_path': 'config.toml', 'uid': None}
+New chain is created with UID ba0bb490c59c4944b4e59d8b3d489ba5
+['cp', '-r', 'template', 'chains/ba0bb490c59c4944b4e59d8b3d489ba5']
+ba0bb490c59c4944b4e59d8b3d489ba5 b'' b''
+ba0bb490c59c4944b4e59d8b3d489ba5 b'' b''
+ba0bb490c59c4944b4e59d8b3d489ba5 b' Installed hashicorp/null v3.1.0 (signed by HashiCorp)\n- Installing hashicorp/tls v3.1.0...\n- Installed hashicorp/tls v3.1.0 (signed by HashiCorp)\n- Installing hashicorp/aws v4.0.0...\n- Installed hashicorp/aws v4.0.0 (signed by HashiCorp)\n\nTerraform has created a lock file \x1b[1m.terraform.lock.hcl\x1b[0m to record the provider\nselections it made above. Include this file in your version control repository\nso that Terraform can guarantee to make the same selections by default when\nyou run "terraform init" in the future.\x1b[0m\n\n\x1b[0m\x1b[1m\x1b[32mTerraform has been successfully initialized!\x1b[0m\x1b[32m\x1b[0m\n\x1b[0m\x1b[32m\nYou may now begin working with Terraform. Try running "terraform plan" to see\nany changes that are required for your infrastructure. All Terraform commands\nshould now work.\n\nIf you ever set or change modules or backend configuration for Terraform,\nrerun this command to reinitialize your working directory. If you forget, other\ncommands will detect it and remind you to do so if necessary.\x1b[0m\n' b''
+ba0bb490c59c4944b4e59d8b3d489ba5 b'bd787c2588300\n\x1b[0m\x1b[1mnull_resource.run_validator[1] (remote-exec):\x1b[0m \x1b[0m8212764ebe47e4a7ebb092addf3388fd196c724766ab8620c20cd1904422f230\n\x1b[0m\x1b[1mnull_resource.run_validator[0] (remote-exec):\x1b[0m \x1b[0m0fd1b243da3bede63a50ae939c1a5149205f08dee74734472771f4c754dac295\n\x1b[0m\x1b[1mnull_resource.run_validator[2] (remote-exec):\x1b[0m \x1b[0mnohup: redirecting stderr to stdout\n\x1b[0m\x1b[1mnull_resource.run_validator[1] (remote-exec):\x1b[0m \x1b[0mnohup: redirecting stderr to stdout\n\x1b[0m\x1b[1mnull_resource.run_validator[2]: Creation complete after 1m7s [id=1539842972352273609]\x1b[0m\n\x1b[0m\x1b[1mnull_resource.run_validator[0] (remote-exec):\x1b[0m \x1b[0mnohup: redirecting stderr to stdout\n\x1b[0m\x1b[1mnull_resource.run_validator[1]: Creation complete after 1m8s [id=8685649106311502369]\x1b[0m\n\x1b[0m\x1b[1mnull_resource.run_validator[0]: Creation complete after 1m8s [id=6028016110133160958]\x1b[0m\n\x1b[0m\x1b[1m\x1b[32m\nApply complete! Resources: 21 added, 0 changed, 0 destroyed.\n\x1b[0m\x1b[0m\x1b[1m\x1b[32m\nOutputs:\n\n\x1b[0mgenesis_public_ip = "18.221.170.138"\n' b''
+ubuntu@ip-10-0-68-202:~/factory$ cd factory/
+-bash: cd: factory/: No such file or directory
+ubuntu@ip-10-0-68-202:~/factory$ ls factory/chains/
+ls: cannot access 'factory/chains/': No such file or directory
+ubuntu@ip-10-0-68-202:~/factory$ python stop_chain.py -u ba0bb490c59c4944b4e59d8b3d489ba5
+
+Command 'python' not found, did you mean:
+
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+
+ubuntu@ip-10-0-68-202:~/factory$ python3 stop_chain.py -u ba0bb490c59c4944b4e59d8b3d489ba5
+{'uid': 'ba0bb490c59c4944b4e59d8b3d489ba5'}
+ 
+ba0bb490c59c4944b4e59d8b3d489ba5 b'm\x1b[1maws_instance.validator_node[0]: Destruction complete after 2m21s\x1b[0m\n\x1b[0m\x1b[1maws_instance.genesis_node: Destruction complete after 2m21s\x1b[0m\n\x1b[0m\x1b[1maws_instance.validator_node[2]: Destruction complete after 2m21s\x1b[0m\n\x1b[0m\x1b[1maws_instance.validator_node[1]: Destruction complete after 2m21s\x1b[0m\n\x1b[0m\x1b[1maws_key_pair.generated_key: Destroying... [id=solana-nr3_ec2_efs_access_key]\x1b[0m\x1b[0m\n\x1b[0m\x1b[1maws_security_group.ec2_security_group: Destroying... [id=sg-0d944c738f17012e9]\x1b[0m\x1b[0m\n\x1b[0m\x1b[1maws_key_pair.generated_key: Destruction complete after 0s\x1b[0m\n\x1b[0m\x1b[1mtls_private_key.key: Destroying... [id=9e5afb4d859e6e871270382b0f02bb2a721de20d]\x1b[0m\x1b[0m\n\x1b[0m\x1b[1mtls_private_key.key: Destruction complete after 0s\x1b[0m\n\x1b[0m\x1b[1maws_security_group.ec2_security_group: Destruction complete after 0s\x1b[0m\n\x1b[0m\x1b[1maws_default_vpc.default: Destroying... [id=vpc-a57dc1ce]\x1b[0m\x1b[0m\n\x1b[0m\x1b[1maws_default_vpc.default: Destruction complete after 0s\x1b[0m\n\x1b[0m\x1b[1m\x1b[32m\nDestroy complete! Resources: 21 destroyed.\n\x1b[0m' b''
+ba0bb490c59c4944b4e59d8b3d489ba5 b'' b''
+ubuntu@ip-10-0-68-202:~/factory$ 
+ubuntu@ip-10-0-68-202:~/factory$ 

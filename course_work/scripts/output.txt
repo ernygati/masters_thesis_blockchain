@@ -1,0 +1,154 @@
+[0m[38;5;8m[[0m2022-06-02T08:58:06.468660030Z [0m[32mINFO [0m solana_bench_tps[0m[38;5;8m][0m Connecting to the cluster
+[0m[38;5;8m[[0m2022-06-02T08:58:06.470682533Z [0m[32mINFO [0m solana_core::gossip_service[0m[38;5;8m][0m Entrypoint: Some(34.253.181.133:8001)
+[0m[38;5;8m[[0m2022-06-02T08:58:06.470705734Z [0m[32mINFO [0m solana_core::gossip_service[0m[38;5;8m][0m Node Id: xoExoTF189N8qEkVyV7Z6fN3mjNuDZAVL2rkP4HVZjj
+[0m[38;5;8m[[0m2022-06-02T08:58:06.472315074Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m metrics disabled: SOLANA_METRICS_CONFIG: environment variable not found
+[0m[38;5;8m[[0m2022-06-02T08:58:06.771634795Z [0m[32mINFO [0m solana_core::cluster_info[0m[38;5;8m][0m Setting shred version to 31540 from entrypoint 2mQiMYXzEH88L2x9dDyMqeNupbM2vg2auChtpWhfnzju
+[0m[38;5;8m[[0m2022-06-02T08:58:06.950499015Z [0m[32mINFO [0m solana_core::gossip_service[0m[38;5;8m][0m discover success in 0s...
+    IP Address        |Age(ms)| Node identifier                              | Version |Gossip| TPU  |TPUfwd| TVU  |TVUfwd|Repair|ServeR|ShredVer
+    ------------------+-------+----------------------------------------------+---------+------+------+------+------+------+------+------+--------
+    none            me|   481 | xoExoTF189N8qEkVyV7Z6fN3mjNuDZAVL2rkP4HVZjj  |  1.5.0  | none | none | none | none | none | none | none | 0
+    34.253.181.133    |   194 | 2mQiMYXzEH88L2x9dDyMqeNupbM2vg2auChtpWhfnzju |  1.5.0  | 8001 | 8003 | 8004 | 8000 | 8002 | 8006 | 8007 | 31540
+    3.250.222.115     |   194 | 3L9P66j6Lo6oGkmah83impLrZ5SsHjUmNPY1W9sW3qaz |  1.5.0  | 8000 | 8003 | 8004 | 8001 | 8002 | 8006 | 8007 | 31540
+    18.202.236.110    |   194 | J42zoXUd1CdcxEEsaoAoTdQpMtwBWCTpBpKQoeXwt7Bk |  1.5.0  | 8000 | 8003 | 8004 | 8001 | 8002 | 8006 | 8007 | 31540
+    54.246.21.169     |   194 | CJSea14gNqvoQDz33yXem5Tvewem8tUfbnSQQzqCLpJp |  1.5.0  | 8000 | 8003 | 8004 | 8001 | 8002 | 8006 | 8007 | 31540
+    Nodes: 4
+    Spies: 1
+[0m[38;5;8m[[0m2022-06-02T08:58:06.954357221Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Creating 400 keypairs...
+[0m[38;5;8m[[0m2022-06-02T08:58:06.960393569Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Get lamports...
+[0m[38;5;8m[[0m2022-06-02T08:58:07.414702278Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Funding keypair balance: 0 max_fee: 100000 lamports_per_account: 1000000000 extra: 341 total: 1365034100000
+[0m[38;5;8m[[0m2022-06-02T08:58:07.566195235Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:07.566235315Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m starting balance 0
+[0m[38;5;8m[[0m2022-06-02T08:58:07.566240803Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Airdropping 1365034100000 lamports from 34.253.181.133:9900 for 6yRQaCtrBucxNJSQA9KbT2PunRpsYzEi2CvfR8ZPxG43
+[0m[38;5;8m[[0m2022-06-02T08:58:07.566319731Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=0i
+[0m[38;5;8m[[0m2022-06-02T08:58:07.642150850Z [0m[32mINFO [0m solana_faucet::faucet[0m[38;5;8m][0m request_airdrop_transaction: faucet_addr=34.253.181.133:9900 id=6yRQaCtrBucxNJSQA9KbT2PunRpsYzEi2CvfR8ZPxG43 lamports=1365034100000 blockhash=5u56qE5rgA3bLCFRXjYyXV6uJS4wM3L4CojwmZz1wX6K
+[0m[38;5;8m[[0m2022-06-02T08:58:08.853513064Z [0m[32mINFO [0m solana_client::rpc_client[0m[38;5;8m][0m signature 2eALKs9ZxBxkcgTcNLk9YWnJaBraxRSkEgHek3DvdfyyQS1f8EvRqwagdfwHL3oBYn6X19wJUnn1Cr6WnNZUZNWG confirmed 1 out of 1 after 1054 ms
+[0m[38;5;8m[[0m2022-06-02T08:58:08.929406857Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m current balance 1365034100000...
+[0m[38;5;8m[[0m2022-06-02T08:58:08.929434167Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1365034100000
+[0m[38;5;8m[[0m2022-06-02T08:58:08.929539542Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferring 341008500000 each to 4 accounts in 1 txs
+[0m[38;5;8m[[0m2022-06-02T08:58:08.929546123Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1365034100000i
+[0m[38;5;8m[[0m2022-06-02T08:58:10.238329892Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferred
+[0m[38;5;8m[[0m2022-06-02T08:58:10.238362941Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m funded: 4 left: 1360
+[0m[38;5;8m[[0m2022-06-02T08:58:10.238855433Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferring 85002100000 each to 16 accounts in 4 txs
+[0m[38;5;8m[[0m2022-06-02T08:58:11.700078479Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferred
+[0m[38;5;8m[[0m2022-06-02T08:58:11.700112192Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m funded: 16 left: 1344
+[0m[38;5;8m[[0m2022-06-02T08:58:11.700386267Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferring 21000500000 each to 64 accounts in 16 txs
+[0m[38;5;8m[[0m2022-06-02T08:58:13.242429900Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferred
+[0m[38;5;8m[[0m2022-06-02T08:58:13.242465734Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m funded: 64 left: 1280
+[0m[38;5;8m[[0m2022-06-02T08:58:13.242774399Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferring 5000100000 each to 256 accounts in 64 txs
+[0m[38;5;8m[[0m2022-06-02T08:58:14.947023143Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferred
+[0m[38;5;8m[[0m2022-06-02T08:58:14.947056054Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m funded: 256 left: 1024
+[0m[38;5;8m[[0m2022-06-02T08:58:14.947559810Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferring 1000000000 each to 1024 accounts in 256 txs
+[0m[38;5;8m[[0m2022-06-02T08:58:18.531203465Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m transferred
+[0m[38;5;8m[[0m2022-06-02T08:58:18.531247208Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m funded: 1024 left: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:18.609522920Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Initial transaction count 518
+[0m[38;5;8m[[0m2022-06-02T08:58:18.609542071Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Sampling TPS every 1 second...
+[0m[38;5;8m[[0m2022-06-02T08:58:18.688095614Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Signing transactions... 50 (reclaim=false, blockhash=FmJS83hnx8D3Q9BLmmabd2oszERYQscyeBRcVf7yPab8)
+[0m[38;5;8m[[0m2022-06-02T08:58:18.688806439Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Done. 73.79 thousand signatures per second, 13.55 us per signature, 0 ms total time, FmJS83hnx8D3Q9BLmmabd2oszERYQscyeBRcVf7yPab8
+[0m[38;5;8m[[0m2022-06-02T08:58:18.688869409Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-generate_txs duration=677i
+[0m[38;5;8m[[0m2022-06-02T08:58:18.766035318Z [0m[32mINFO [0m solana_client::perf_utils[0m[38;5;8m][0m Sampler      0.00 TPS, Transactions:      0, Total transactions: 0 over 0 s
+[0m[38;5;8m[[0m2022-06-02T08:58:18.844565258Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:18.844675920Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=0i
+[0m[38;5;8m[[0m2022-06-02T08:58:19.051307078Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:19.051405737Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=0i
+[0m[38;5;8m[[0m2022-06-02T08:58:19.536245608Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:19.536363395Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=0i
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688556645Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688654031Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688701901Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688720896Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688808078Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 60505.22 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688835201Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 88164.63 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688869994Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 102629.89 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688880143Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=231i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688896014Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=149i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688927993Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=132i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688896014Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 109504.04 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:19.688988071Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=166i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:19.742400967Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:19.742479668Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=0i
+[0m[38;5;8m[[0m2022-06-02T08:58:19.844566215Z [0m[32mINFO [0m solana_client::perf_utils[0m[38;5;8m][0m Sampler     11.13 TPS, Transactions:     12, Total transactions: 12 over 1 s
+[0m[38;5;8m[[0m2022-06-02T08:58:20.227161302Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:20.227266575Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=0i
+[0m[38;5;8m[[0m2022-06-02T08:58:20.689049279Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 2 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:20.689196910Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 23917.15 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:20.689314089Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=137i count=2i
+[0m[38;5;8m[[0m2022-06-02T08:58:20.689731015Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Signing transactions... 50 (reclaim=false, blockhash=2nSsmJK2trWQQ3uRkz2KFBn5THoULyWu5uXvcqXrA1S2)
+[0m[38;5;8m[[0m2022-06-02T08:58:20.690283829Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Done. 95.15 thousand signatures per second, 10.51 us per signature, 0 ms total time, 2nSsmJK2trWQQ3uRkz2KFBn5THoULyWu5uXvcqXrA1S2
+[0m[38;5;8m[[0m2022-06-02T08:58:20.690342264Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-generate_txs duration=525i
+[0m[38;5;8m[[0m2022-06-02T08:58:20.712016795Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:20.712084248Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=0i
+[0m[38;5;8m[[0m2022-06-02T08:58:20.922708057Z [0m[32mINFO [0m solana_client::perf_utils[0m[38;5;8m][0m Sampler     51.92 TPS, Transactions:     56, Total transactions: 68 over 2 s
+[0m[38;5;8m[[0m2022-06-02T08:58:21.197026778Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 0
+[0m[38;5;8m[[0m2022-06-02T08:58:21.197121111Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=0i
+[0m[38;5;8m[[0m2022-06-02T08:58:21.681844315Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1365034100000
+[0m[38;5;8m[[0m2022-06-02T08:58:21.681971903Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1365034100000i
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689201870Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689219677Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689261339Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689351474Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 104311.55 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689384863Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 122832.516 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689408118Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=142i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689356718Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 115611.39 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689425710Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=123i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689416402Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689468922Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=180i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689593562Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 103070.65 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:21.689650887Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=152i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:22.001214654Z [0m[32mINFO [0m solana_client::perf_utils[0m[38;5;8m][0m Sampler     57.51 TPS, Transactions:     62, Total transactions: 130 over 3 s
+[0m[38;5;8m[[0m2022-06-02T08:58:22.167158190Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1365034100000
+[0m[38;5;8m[[0m2022-06-02T08:58:22.167251744Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1365034100000i
+[0m[38;5;8m[[0m2022-06-02T08:58:22.373845456Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1365034100000
+[0m[38;5;8m[[0m2022-06-02T08:58:22.374003499Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1365034100000i
+[0m[38;5;8m[[0m2022-06-02T08:58:22.689586605Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 2 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:22.689708290Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 22537.242 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:22.689807764Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=109i count=2i
+[0m[38;5;8m[[0m2022-06-02T08:58:22.690450834Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Signing transactions... 50 (reclaim=false, blockhash=5tY6tYLtKiUbKLbTKbdCLp92H7w3VJynjCvH3GndPfac)
+[0m[38;5;8m[[0m2022-06-02T08:58:22.691019053Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Done. 92.26 thousand signatures per second, 10.84 us per signature, 0 ms total time, 5tY6tYLtKiUbKLbTKbdCLp92H7w3VJynjCvH3GndPfac
+[0m[38;5;8m[[0m2022-06-02T08:58:22.691082539Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-generate_txs duration=541i
+[0m[38;5;8m[[0m2022-06-02T08:58:22.858755059Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1000095000
+[0m[38;5;8m[[0m2022-06-02T08:58:22.858851282Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1000095000i
+[0m[38;5;8m[[0m2022-06-02T08:58:23.079614974Z [0m[32mINFO [0m solana_client::perf_utils[0m[38;5;8m][0m Sampler      7.42 TPS, Transactions:      8, Total transactions: 138 over 4 s
+[0m[38;5;8m[[0m2022-06-02T08:58:23.343807201Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1000095000
+[0m[38;5;8m[[0m2022-06-02T08:58:23.343887620Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1000095000i
+[0m[38;5;8m[[0m2022-06-02T08:58:23.689778502Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:23.689807478Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:23.689925972Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:23.689927155Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 12 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:23.690182592Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 37481.38 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:23.690214129Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 40853.844 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:23.690230259Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 69901.555 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:23.690247373Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=343i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:23.690295876Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=316i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:23.690326066Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=192i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:23.690269545Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 53116.15 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:23.690717983Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=632i count=12i
+[0m[38;5;8m[[0m2022-06-02T08:58:23.829282946Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1000095000
+[0m[38;5;8m[[0m2022-06-02T08:58:23.829421246Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1000095000i
+[0m[38;5;8m[[0m2022-06-02T08:58:24.158210556Z [0m[32mINFO [0m solana_client::perf_utils[0m[38;5;8m][0m Sampler     57.49 TPS, Transactions:     62, Total transactions: 200 over 5 s
+[0m[38;5;8m[[0m2022-06-02T08:58:24.314617090Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1000095000
+[0m[38;5;8m[[0m2022-06-02T08:58:24.314746374Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1000095000i
+[0m[38;5;8m[[0m2022-06-02T08:58:24.521080344Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1000095000
+[0m[38;5;8m[[0m2022-06-02T08:58:24.521202956Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1000095000i
+[0m[38;5;8m[[0m2022-06-02T08:58:24.690379408Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Transferring 1 unit 2 times... to 34.253.181.133:8003
+[0m[38;5;8m[[0m2022-06-02T08:58:24.690481558Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Tx send done. 0 ms 25758.258 tps
+[0m[38;5;8m[[0m2022-06-02T08:58:24.690581191Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-do_tx_transfers duration=97i count=2i
+[0m[38;5;8m[[0m2022-06-02T08:58:24.690956757Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Waiting for sampler threads...
+[0m[38;5;8m[[0m2022-06-02T08:58:25.006403855Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1000095000
+[0m[38;5;8m[[0m2022-06-02T08:58:25.006516738Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1000095000i
+[0m[38;5;8m[[0m2022-06-02T08:58:25.236879907Z [0m[32mINFO [0m solana_client::perf_utils[0m[38;5;8m][0m Sampler      9.27 TPS, Transactions:     10, Total transactions: 210 over 6 s
+[0m[38;5;8m[[0m2022-06-02T08:58:25.237097026Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Waiting for transmit threads...
+[0m[38;5;8m[[0m2022-06-02T08:58:25.691097168Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Waiting for blockhash thread...
+[0m[38;5;8m[[0m2022-06-02T08:58:25.769626026Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m Token balance: 1000095000
+[0m[38;5;8m[[0m2022-06-02T08:58:25.769675188Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m  Node address        |       Max TPS | Total Transactions
+[0m[38;5;8m[[0m2022-06-02T08:58:25.769680871Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m ---------------------+---------------+--------------------
+[0m[38;5;8m[[0m2022-06-02T08:58:25.769686158Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m 34.253.181.133:8003  |         57.51 | 210 
+[0m[38;5;8m[[0m2022-06-02T08:58:25.769694573Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m 
+    Average max TPS: 57.51, 0 nodes had 0 TPS
+[0m[38;5;8m[[0m2022-06-02T08:58:25.769700210Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m 
+    Highest TPS: 57.51 sampling period 1s max transactions: 210 clients: 1 drop rate: 0.00
+[0m[38;5;8m[[0m2022-06-02T08:58:25.769724903Z [0m[32mINFO [0m solana_bench_tps::bench[0m[38;5;8m][0m 	Average TPS: 29.654388
+[0m[38;5;8m[[0m2022-06-02T08:58:25.769748981Z [0m[32mINFO [0m solana_metrics::metrics[0m[38;5;8m][0m datapoint: bench-tps-lamport_balance balance=1000095000i
+
+ NEW TRANSACTION 
+ 
+  

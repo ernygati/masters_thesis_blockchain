@@ -44,7 +44,7 @@ class DYCORSOptimProblem(OptimizationProblem):
         self.y=y
 
     def train_surrogate(self, X, y):
-        surrogate = gp.GPRegressor(6, self.lb, self.ub)
+        surrogate = gp.GPRegressor(self.dim, self.lb, self.ub)
         surrogate.updated = False
         surrogate._X = X
         surrogate.fX =  y
@@ -59,7 +59,7 @@ class DYCORSOptimProblem(OptimizationProblem):
 class BayesianOptimizer(): 
     """ Implements 4 Bayesian optimization strategies: UCB, Expected Improvement, Thompson sampling and DYCORS"""
     def __init__(self, bounds:np.array, standard_bounds: np.array, num_candidates=1,
-                  num_restarts = 5, raw_samples = 100): 
+                  num_restarts = 5, raw_samples = 100, exp_name="exp"): 
         """ Initializes global atributes.
 
         Parameters
@@ -83,6 +83,9 @@ class BayesianOptimizer():
          
         self.bounds = torch.stack([torch.tensor(bounds[0],dtype=torch.float64), torch.tensor(bounds[1],dtype=torch.float64)])
         self.standard_bounds = torch.tensor(standard_bounds)
+        self.save_optimal_points_path = f"data/opt_results/{exp_name}"
+        os.makedirs(self.save_optimal_points_path, exist_ok=True)
+        self.optimal_points_dict={}
      
     def train_botorch_surrogate(self, X: np.array, y: np.array): 
         """ Trains SingleTaskGP botorch surrogate model.
@@ -114,7 +117,7 @@ class BayesianOptimizer():
         candidate, acq_value = optimize_acqf( 
         UCB,self.standard_bounds, self.num_candidates, self.num_restarts, self.raw_samples
         ) 
-
+        self.optimal_points_dict["UCB"] = [candidate[0], acq_value]
         candidate = np.array(unnormalize(candidate ,self.bounds))
          
         return candidate[0].astype(int)
@@ -126,14 +129,15 @@ class BayesianOptimizer():
         EI = ExpectedImprovement(model_local, best_f=best_f, maximize = True) 
         candidate, acq_value = optimize_acqf( 
         EI, self.standard_bounds, self.num_candidates, self.num_restarts, self.raw_samples, 
-        ) 
+        )
+        self.optimal_points_dict["EI"] = [candidate[0], acq_value]
         candidate = np.array(unnormalize(candidate ,self.bounds))
          
         return candidate[0].astype(int)
     
-    def optimize_TS(self, X: np.array, y: np.array):
+    def optimize_TS(self, X: np.array, y: np.array, n_init=10):
         """ """
-        X_cand = draw_sobol_samples(self.standard_bounds,1,1)[0]
+        X_cand = draw_sobol_samples(self.standard_bounds,1,n_init)[0]
         model_local = self.train_botorch_surrogate(X, y) 
         thompson_sampling = MaxPosteriorSampling(model=model_local, replacement=True)
         candidate = thompson_sampling(X_cand, num_samples=self.num_candidates)
@@ -160,10 +164,10 @@ class BayesianOptimizer():
         controller = SerialController(objective=optim.eval)
         controller.strategy = strategy
         controller.run()
-        candidate =  np.array(unnormalize(torch.tensor(optim.best_x), self.bounds))
+        self.candidate =  np.array(unnormalize(torch.tensor(optim.best_x), self.bounds))
     
 
-        return candidate[0].astype(int)
+        return self.candidate[0].astype(int)
             
 if __name__ == "__main__":
     # feature columns

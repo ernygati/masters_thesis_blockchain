@@ -31,30 +31,28 @@ DEVICE = torch.device("cpu")
 
 class DYCORSOptimProblem(OptimizationProblem):
 
-    def __init__(self, X, y, dim=6, bounds=None, standard_bounds=None):
+    def __init__(self, X, y,objective:callable, dim=6,bounds=None, standard_bounds=None):
         self.best_x = []
         self.dim = dim
-        self.lb = np.array(standard_bounds[0])
-        self.ub = np.array(standard_bounds[1])
+        self.lb = np.array(bounds[0])
+        self.ub = np.array(bounds[1])
         self.int_var = []
         self.cont_var = np.arange(0, dim) 
         self.info = str(dim) + "-dimensional black box"
 
         self.X = np.array(normalize(torch.tensor(X), bounds))
         self.y=y
-
-    def train_surrogate(self, X, y):
-        surrogate = gp.GPRegressor(self.dim, self.lb, self.ub)
-        surrogate.updated = False
-        surrogate._X = X
-        surrogate.fX =  y
-        surrogate._fit()
-        return surrogate
+        self.objective = objective
+        
+    def obj(self,x: np.array):
+        return self.objective(x)
         
     def eval(self, x):
+        self.__check_input__(x)
         self.best_x.append(x)
-        surrogate = self.train_surrogate(self.X, self.y)
-        return surrogate.predict(x)[0]
+        # print(x, -self.obj(x)[0])
+        return -self.obj(x)[0]#surrogate.predict(x)[0]
+    
 
 class BayesianOptimizer(): 
     """ Implements 4 Bayesian optimization strategies: UCB, Expected Improvement, Thompson sampling and DYCORS"""
@@ -146,28 +144,39 @@ class BayesianOptimizer():
          
         return candidate[0].astype(int)
     
-    def optimize_DYCORS(self, X: np.array, y: np.array):
+    def optimize_DYCORS(self, X: np.array, y: np.array, max_evals=50):
         """ """
         input_dimensionality = X.shape[1]
+        model_local = self.train_botorch_surrogate(X,y)
+        def DYCORS_objective(x, model_local, bounds):
+            x = torch.tensor(x)
+            return model_local.posterior(normalize(x, bounds).reshape(1,-1)).mean.cpu().detach().numpy()[0]
         X = np.array(X)
-        y= np.array(y)
-        optim = DYCORSOptimProblem(X, y,input_dimensionality, self.bounds, self.standard_bounds)
-        surrogate = gp.GPRegressor(input_dimensionality,  np.array(self.standard_bounds[0]), np.array(self.standard_bounds[1]))
-        
+        y= -np.array(y)
+        optim = DYCORSOptimProblem(X, y,lambda x: DYCORS_objective(x, model_local, self.bounds), input_dimensionality, self.bounds, self.standard_bounds)
+        surrogate = gp.GPRegressor(input_dimensionality,   optim.lb, optim.ub)
+
         slhd = SymmetricLatinHypercube(dim=input_dimensionality,num_pts=2*input_dimensionality+1)
 
         # Create the DYCORSStrategy optimizer
-        strategy = DYCORSStrategy(max_evals=self.num_candidates, opt_prob=optim, exp_design=slhd, 
-                                surrogate=surrogate,
-                                batch_size=1)
+        runs = 1
+        for _ in range(runs):
+            strategy = DYCORSStrategy(max_evals=max_evals, opt_prob=optim, exp_design=slhd,
+                                    asynchronous=False,
+                                    surrogate=surrogate,
+                                    num_cand=100*optim.dim,
+                                    batch_size=1)
 
-        controller = SerialController(objective=optim.eval)
-        controller.strategy = strategy
-        controller.run()
-        self.candidate =  np.array(unnormalize(torch.tensor(optim.best_x), self.bounds))
+            controller = SerialController(objective=optim.eval)
+            controller.strategy = strategy
+            controller.run()
+        argmin = np.argmin([controller.fevals[i].value for i in range(len(controller.fevals))])
+        self.optimal_points_dict["DYCORS"] = [normalize(torch.tensor(optim.best_x[argmin]),self.bounds), torch.tensor(-controller.best_point().value)]
+        candidate =  np.array(optim.best_x)
+
     
 
-        return self.candidate[0].astype(int)
+        return candidate[-1].astype(int)
             
 if __name__ == "__main__":
     # feature columns
@@ -185,10 +194,14 @@ if __name__ == "__main__":
     # lower and upper bound for X candidates seacrh
     lb = torch.tensor([3, 53, 850, 850 , 1700000, 136])
     ub = torch.tensor([5, 73, 1150, 1150 , 2300000, 184])
+    
     bounds = torch.stack([lb.type(torch.float64), ub.type(torch.float64)])
     standard_bounds = np.stack([[0.0]*6, [1.0]*6])
 
     botorch_optim = BayesianOptimizer(bounds, standard_bounds)
+    
+    #DYCORS strategy needs objective function for evaluation to predict next andidate points x
+    
     cand_UCB = botorch_optim.optimize_UCB(X, y)
     cand_EI = botorch_optim.optimize_EI(X, y)
     cand_TS = botorch_optim.optimize_TS(X, y)
@@ -200,5 +213,6 @@ if __name__ == "__main__":
         cand_DYCORS
         )
     )
+    print(botorch_optim.optimal_points_dict)
     # surrogate = botorch_optim.train_botorch_surrogate(X,y)
     # print(surrogate)

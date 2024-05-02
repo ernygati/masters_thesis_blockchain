@@ -133,12 +133,13 @@ class BayesianOptimizer():
          
         return candidate[0].astype(int)
     
-    def optimize_TS(self, X: np.array, y: np.array, n_init=10):
+    def optimize_TS(self, X: np.array, y: np.array, n_init=100):
         """ """
         X_cand = draw_sobol_samples(self.standard_bounds,1,n_init)[0]
         model_local = self.train_botorch_surrogate(X, y) 
         thompson_sampling = MaxPosteriorSampling(model=model_local, replacement=True)
         candidate = thompson_sampling(X_cand, num_samples=self.num_candidates)
+        self.optimal_points_dict["TS"] = [candidate[0],None]
 
         candidate = np.array(unnormalize(candidate ,self.bounds))
          
